@@ -7,10 +7,14 @@
     android:id="@+id/root_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
     android:orientation="vertical">
     <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:id="@+id/title_card"
         android:gravity="center"
         android:padding="15dp">
@@ -23,6 +27,7 @@
         android:adjustViewBounds="true"
         app:srcCompat="@drawable/sort_primary"/>
     <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -35,8 +40,10 @@
         android:layout_height="1dp"
         android:background="@color/border_gray"/>
     <android.support.v7.widget.RecyclerView
+        android:visibility="gone"
         android:id="@+id/child_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        tools:listitem="@layout/child_card"/>
 </android.support.v7.widget.LinearLayoutCompat>
 </layout>

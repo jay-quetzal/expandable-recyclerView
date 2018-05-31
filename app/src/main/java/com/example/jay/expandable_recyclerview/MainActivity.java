@@ -16,8 +16,12 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
     LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-    RecyclerViewAdapterParent adapter = new RecyclerViewAdapterParent(this);
+    RecyclerViewAdapterParent adapter = new RecyclerViewAdapterParent(this, binding.parentRecyclerView);
     binding.parentRecyclerView.setLayoutManager(layoutManager);
+    binding.parentRecyclerView.setHasFixedSize(true);
+    binding.parentRecyclerView.setItemViewCacheSize(0);
+    binding.parentRecyclerView.getRecycledViewPool()
+            .setMaxRecycledViews(0, 0);
     binding.parentRecyclerView.setAdapter(adapter);
   }
 }
